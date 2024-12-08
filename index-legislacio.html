@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIENVENIDO</title>
+    <style>
+        body {
+            background-color: #D3AB9E;
+            margin: 0;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+
+        /* Estilo para el título en la parte superior */
+        h1 {
+            color: white;
+            font-size: 2em;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        /* Estilo para el subtítulo */
+        h2 {
+            color: white;
+            font-size: 1.8em;
+            text-align: center;
+            bottom: 20px;
+            width: 100%;
+        }
+
+        /* Logo en la esquina izquierda */
+        .logo-izquierda {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 150px;
+            height: auto;
+        }
+
+        /* Logo en la esquina derecha */
+        .logo-derecha {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 150px;
+            height: auto;
+        }
+
+        /* Estilo para el menú */
+        nav {
+            background-color: #7C5D56; /* Color del menú */
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #B78A82; /* Color al pasar el mouse */
+        }
+
+        /* Sección de contenido */
+        .contenido {
+            padding: 20px;
+            text-align: center;
+            color: #4D403B;
+        }
+
+        /* Ocultar todas las secciones inicialmente */
+        .seccion {
+            display: none;
+        }
+
+        /* Mostrar la sección activa */
+        .activo {
+            display: block;
+        }
+
+        /* Botón para volver al inicio */
+        .boton-flotante {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #7C5D56;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5em;
+            cursor: pointer;
+            z-index: 3;
+        }
+
+        .boton-flotante:hover {
+            background-color: #B78A82;
+        }
+    </style>
+    <script>
+        function mostrarSeccion(id) {
+            // Oculta todas las secciones
+            const secciones = document.querySelectorAll('.seccion');
+            secciones.forEach(seccion => seccion.classList.remove('activo'));
+
+            // Muestra la sección seleccionada
+            const seccionActiva = document.getElementById(id);
+            seccionActiva.classList.add('activo');
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</head>
+<body>
+    <!-- Título principal -->
+    <h1>¡TECNOLOGICO DE ESTUDIOS SUPERIORES IXTAPALUCA!</h1>
+
+    <!-- Logo izquierdo -->
+    <img class="logo-izquierda" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLKpksW9yYNrOMc_c92GaW6EPsSzgwyVcLk0Y_wysFVFoOVM6tw2XnSI-nR0k8OKxcbg&usqp=CAU" alt="Logo izquierdo">
+
+    <!-- Logo derecho -->
+    <img class="logo-derecha" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7Hax22jkR4ifJnQo-EgALPC2c_6VfrorZrrflwZEr59IiIaBz9OiOZ7OWsnN217yuD9A&usqp=CAU" alt="Logo derecho">
+
+    <!-- Menú de navegación -->
+    <nav>
+        <a href="#" onclick="mostrarSeccion('creadores')">Creadores</a>
+        <a href="#" onclick="mostrarSeccion('indice')">Índice</a>
+        <a href="#" onclick="mostrarSeccion('marco_teorico')">Marco Teórico</a>
+        <a href="#" onclick="mostrarSeccion('videos')">Videos</a>
+    </nav>
+
+    <!-- Sección Creadores -->
+    <div id="creadores" class="seccion contenido activo">
+        <h2>Creadores</h2>
+        <ul>
+            <li>SUAREZ MEDINA JESUS NATANIEL</li>
+            <li>HERNANDEZ GUADARRAMA ALAN URIEL</li>
+            <li>FERNANDO MARCO FLORES</li>
+            <li>TOLENTINO DELGADO AXEL ADONAI</li>
+        </ul>
+    </div>
+
+    <!-- Sección Índice -->
+    <div id="indice" class="seccion contenido">
+        <h2>Índice</h2>
+        <ul>
+            <li>Introducción al Derecho</li>
+            <li>Derecho y la Informática</li>
+            <li>Derecho de la Información y los Datos Informáticos</li>
+            <li>Derecho de la Propiedad Intelectual</li>
+            <li>Contratos Informáticos</li>
+            <li>Delitos Informáticos</li>
+        </ul>
+    </div>
+
+    <!-- Sección Marco Teórico -->
+    <div id="marco_teorico" class="seccion contenido">
+        <h2>Marco Teórico</h2>
+        <p>Definiciones e información relevante sobre los temas principales.</p>
+        <ul>
+            <li><b>Introducción al Derecho:</b> El Derecho regula la convivencia social.</li>
+            <li><b>Derecho y la Informática:</b> Enfocado en la sociedad de la información.</li>
+            <li><b>Derecho de la Información:</b> Análisis del marco jurídico de datos.</li>
+            <li><b>Propiedad Intelectual:</b> Protección jurídica de tecnologías.</li>
+            <li><b>Contratos Informáticos:</b> Elementos de acuerdos digitales.</li>
+            <li><b>Delitos Informáticos:</b> Clasificación y normativa aplicable.</li>
+        </ul>
+    </div>
+
+    <!-- Sección Videos -->
+    <div id="videos" class="seccion contenido">
+        <h2>Videos de Estudiantes</h2>
+        <p>A continuación, puedes ver un video realizado por los estudiantes:</p>
+        <!-- Video de YouTube incrustado -->
+        <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/JWMQOfDFtcg" 
+            title="Video de estudiantes" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- Botón para volver al inicio -->
+    <button class="boton-flotante" onclick="scrollToTop()">⬆</button>
+</body>
+</html>
